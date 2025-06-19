@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\FinAccountResource\Pages;
 
-use Joinbiz\BizApp\Resources\FinAccountResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Joinbiz\BizApp\Resources\FinAccountResource;
 
 class EditFinAccount extends EditRecord
 {

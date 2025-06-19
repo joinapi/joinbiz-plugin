@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\GlAccountOrganizationResource\Pages;
 
-use Joinbiz\BizApp\Resources\GlAccountOrganizationResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Joinbiz\BizApp\Resources\GlAccountOrganizationResource;
 
 class EditGlAccountOrganization extends EditRecord
 {

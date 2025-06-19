@@ -15,5 +15,4 @@ trait HasCustomLabel
     {
         return static::$modelLabel ?? static::getLabel() ?? strtoupper(get_model_label(static::getModel()));
     }
-
 }

@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\PaymentResource\Pages;
 
-use Joinbiz\BizApp\Resources\PaymentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Joinbiz\BizApp\Resources\PaymentResource;
 
 class EditPayment extends EditRecord
 {

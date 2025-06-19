@@ -2,25 +2,23 @@
 
 namespace Joinbiz\BizApp\Resources;
 
-use Joinbiz\BizApp\Resources\GlAccountOrganizationResource\Pages;
-use Joinbiz\BizApp\Resources\GlAccountOrganizationResource\RelationManagers;
-use Illuminate\Database\Eloquent\Model;
-use Joinbiz\Data\Models\Accounting\GlAccountOrganization;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Joinbiz\BizApp\Concerns\HasCustomLabel;
+use Joinbiz\BizApp\Resources\GlAccountOrganizationResource\Pages;
+use Joinbiz\Data\Models\Accounting\GlAccountOrganization;
 
 class GlAccountOrganizationResource extends Resource
 {
     use HasCustomLabel;
 
     protected static ?string $model = GlAccountOrganization::class;
+
     protected static ?string $navigationGroup = 'ACCOUNTING';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -75,7 +73,7 @@ class GlAccountOrganizationResource extends Resource
                 Tables\Columns\TextColumn::make('created_tx_stamp')
                     ->dateTime()
                     ->sortable(),
-            ])            ->recordUrl(null)
+            ])->recordUrl(null)
             ->filters([
                 //
             ])

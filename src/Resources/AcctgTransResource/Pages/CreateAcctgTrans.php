@@ -2,9 +2,8 @@
 
 namespace Joinbiz\BizApp\Resources\AcctgTransResource\Pages;
 
-use Joinbiz\BizApp\Resources\AcctgTransResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Joinbiz\BizApp\Resources\AcctgTransResource;
 
 class CreateAcctgTrans extends CreateRecord
 {

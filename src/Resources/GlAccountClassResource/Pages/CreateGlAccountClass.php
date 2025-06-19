@@ -2,9 +2,8 @@
 
 namespace Joinbiz\BizApp\Resources\GlAccountClassResource\Pages;
 
-use Joinbiz\BizApp\Resources\GlAccountClassResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Joinbiz\BizApp\Resources\GlAccountClassResource;
 
 class CreateGlAccountClass extends CreateRecord
 {

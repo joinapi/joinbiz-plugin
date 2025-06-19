@@ -2,9 +2,8 @@
 
 namespace Joinbiz\BizApp\Resources\FinAccountTypeResource\Pages;
 
-use Joinbiz\BizApp\Resources\FinAccountTypeResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Joinbiz\BizApp\Resources\FinAccountTypeResource;
 
 class CreateFinAccountType extends CreateRecord
 {

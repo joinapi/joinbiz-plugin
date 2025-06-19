@@ -2,24 +2,23 @@
 
 namespace Joinbiz\BizApp\Resources;
 
-use Joinbiz\BizApp\Resources\PartyTypeResource\Pages;
-use Joinbiz\BizApp\Resources\PartyTypeResource\RelationManagers;
-use Joinbiz\Data\Models\Party\PartyType;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Joinbiz\BizApp\Concerns\HasCustomLabel;
+use Joinbiz\BizApp\Resources\PartyTypeResource\Pages;
+use Joinbiz\Data\Models\Party\PartyType;
 
 class PartyTypeResource extends Resource
 {
     use HasCustomLabel;
 
     protected static ?string $model = PartyType::class;
+
     protected static ?string $navigationGroup = 'PARTY';
+
     public static function form(Form $form): Form
     {
         return $form

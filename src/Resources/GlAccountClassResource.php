@@ -2,24 +2,23 @@
 
 namespace Joinbiz\BizApp\Resources;
 
-use Joinbiz\BizApp\Concerns\HasCustomLabel;
-use Joinbiz\BizApp\Resources\GlAccountClassResource\Pages;
-use Joinbiz\BizApp\Resources\GlAccountClassResource\RelationManagers;
-use Joinbiz\Data\Models\Accounting\GlAccountClass;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Joinbiz\BizApp\Concerns\HasCustomLabel;
+use Joinbiz\BizApp\Resources\GlAccountClassResource\Pages;
+use Joinbiz\Data\Models\Accounting\GlAccountClass;
 
 class GlAccountClassResource extends Resource
 {
     protected static ?string $model = GlAccountClass::class;
 
     use HasCustomLabel;
+
     protected static ?string $navigationGroup = 'ACCOUNTING';
+
     public static function form(Form $form): Form
     {
         return $form

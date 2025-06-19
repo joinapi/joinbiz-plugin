@@ -2,9 +2,8 @@
 
 namespace Joinbiz\BizApp\Resources\PaymentResource\Pages;
 
-use Joinbiz\BizApp\Resources\PaymentResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Joinbiz\BizApp\Resources\PaymentResource;
 
 class CreatePayment extends CreateRecord
 {
