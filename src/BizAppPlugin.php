@@ -4,6 +4,10 @@ namespace Joinbiz\BizApp;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Joinbiz\BizApp\Resources\AcctgTransResource;
+use Joinbiz\BizApp\Resources\FinAccountResource;
+use Joinbiz\BizApp\Resources\GlAccountResource;
+use Joinbiz\BizApp\Resources\PartyGroupResource;
 
 class BizAppPlugin implements Plugin
 {
@@ -14,7 +18,13 @@ class BizAppPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->discoverResources(__DIR__ . '/../Resources', 'Joinbiz\BizApp\Resources');
+        $panel->resources([
+            AcctgTransResource::class,
+            FinAccountResource::class,
+            PartyGroupResource::class,
+            GlAccountResource::class,
+
+        ]);
     }
 
     public function boot(Panel $panel): void
