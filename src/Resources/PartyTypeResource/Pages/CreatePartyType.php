@@ -2,9 +2,8 @@
 
 namespace Joinbiz\BizApp\Resources\PartyTypeResource\Pages;
 
-use Joinbiz\BizApp\Resources\PartyTypeResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Joinbiz\BizApp\Resources\PartyTypeResource;
 
 class CreatePartyType extends CreateRecord
 {

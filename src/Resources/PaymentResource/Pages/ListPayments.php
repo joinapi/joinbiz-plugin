@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\PaymentResource\Pages;
 
-use Joinbiz\BizApp\Resources\PaymentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Joinbiz\BizApp\Resources\PaymentResource;
 
 class ListPayments extends ListRecords
 {

@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\AcctgTransResource\Pages;
 
-use Joinbiz\BizApp\Resources\AcctgTransResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Joinbiz\BizApp\Resources\AcctgTransResource;
 
 class ListAcctgTrans extends ListRecords
 {

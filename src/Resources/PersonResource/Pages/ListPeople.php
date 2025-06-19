@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\PersonResource\Pages;
 
-use Joinbiz\BizApp\Resources\PersonResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Joinbiz\BizApp\Resources\PersonResource;
 
 class ListPeople extends ListRecords
 {

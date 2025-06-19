@@ -2,22 +2,21 @@
 
 namespace Joinbiz\BizApp\Resources;
 
-use Joinbiz\BizApp\Concerns\HasCustomLabel;
-use Joinbiz\BizApp\Resources\FinAccountTypeResource\Pages;
-use Joinbiz\BizApp\Resources\FinAccountTypeResource\RelationManagers;
-use Joinbiz\Data\Models\Accounting\FinAccountType;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Joinbiz\BizApp\Concerns\HasCustomLabel;
+use Joinbiz\BizApp\Resources\FinAccountTypeResource\Pages;
+use Joinbiz\Data\Models\Accounting\FinAccountType;
 
 class FinAccountTypeResource extends Resource
 {
     protected static ?string $model = FinAccountType::class;
+
     use HasCustomLabel;
+
     protected static ?string $navigationGroup = 'ACCOUNTING';
 
     public static function form(Form $form): Form

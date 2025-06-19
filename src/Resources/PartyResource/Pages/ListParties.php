@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\PartyResource\Pages;
 
-use Joinbiz\BizApp\Resources\PartyResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Joinbiz\BizApp\Resources\PartyResource;
 
 class ListParties extends ListRecords
 {

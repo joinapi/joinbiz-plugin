@@ -2,25 +2,24 @@
 
 namespace Joinbiz\BizApp\Resources;
 
-use Joinbiz\BizApp\Concerns\HasCustomLabel;
-use Joinbiz\BizApp\Resources\FinAccountResource\Pages;
-use Joinbiz\BizApp\Resources\FinAccountResource\RelationManagers;
-use Joinbiz\BizApp\Resources\FinAccountResource\Widgets\FinAccountOverview;
-use Illuminate\Support\Facades\Log;
-use Joinbiz\Data\Models\Accounting\FinAccount;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use function Filament\Support\get_model_label;
+use Illuminate\Support\Facades\Log;
+use Joinbiz\BizApp\Concerns\HasCustomLabel;
+use Joinbiz\BizApp\Resources\FinAccountResource\Pages;
+use Joinbiz\BizApp\Resources\FinAccountResource\RelationManagers;
+use Joinbiz\BizApp\Resources\FinAccountResource\Widgets\FinAccountOverview;
+use Joinbiz\Data\Models\Accounting\FinAccount;
 
 class FinAccountResource extends Resource
 {
     use HasCustomLabel;
+
     protected static ?string $navigationGroup = 'ACCOUNTING';
+
     protected static ?string $model = FinAccount::class;
 
     public static function form(Form $form): Form
@@ -77,10 +76,10 @@ class FinAccountResource extends Resource
                 Tables\Columns\TextColumn::make('organization_party_id')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('owner_party_id')
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('post_to_gl_account_id')
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('from_date')
                     ->dateTime()
@@ -90,41 +89,41 @@ class FinAccountResource extends Resource
                     ->toggledHiddenByDefault()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('is_refundable')
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('replenish_payment_id')
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('replenish_level')
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextInputColumn::make('actual_balance')
                     ->type('number')
                     ->beforeStateUpdated(function ($record, $state) {
-                        Log::debug('beforeStateUpdated: ' . $state);;
+                        Log::debug('beforeStateUpdated: ' . $state);
                     })
                     ->afterStateUpdated(function ($record, $state) {
-                        Log::debug('afterStateUpdated: ' . $state);;
+                        Log::debug('afterStateUpdated: ' . $state);
                     }),
                 Tables\Columns\TextColumn::make('available_balance')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('last_updated_stamp')
                     ->dateTime()
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('last_updated_tx_stamp')
                     ->dateTime()
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_stamp')
                     ->dateTime()
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_tx_stamp')
                     ->dateTime()
-                    ->toggleable( isToggledHiddenByDefault: true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
             ])
             ->filters([
@@ -150,15 +149,17 @@ class FinAccountResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\FinAccountTransRelationManager::class
+            RelationManagers\FinAccountTransRelationManager::class,
         ];
     }
+
     public static function getWidgets(): array
     {
         return [
             FinAccountOverview::class,
         ];
     }
+
     public static function getPages(): array
     {
         return [

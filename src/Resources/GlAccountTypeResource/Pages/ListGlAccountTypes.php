@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\GlAccountTypeResource\Pages;
 
-use Joinbiz\BizApp\Resources\GlAccountTypeResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Joinbiz\BizApp\Resources\GlAccountTypeResource;
 
 class ListGlAccountTypes extends ListRecords
 {

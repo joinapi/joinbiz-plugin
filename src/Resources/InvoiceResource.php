@@ -2,25 +2,23 @@
 
 namespace Joinbiz\BizApp\Resources;
 
-use Joinbiz\BizApp\Concerns\HasCustomLabel;
-use Joinbiz\BizApp\Resources\InvoiceResource\Pages;
-use Joinbiz\BizApp\Resources\InvoiceResource\RelationManagers;
-use Joinbiz\Data\Models\Accounting\Invoice;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Joinbiz\BizApp\Concerns\HasCustomLabel;
+use Joinbiz\BizApp\Resources\InvoiceResource\Pages;
+use Joinbiz\BizApp\Resources\InvoiceResource\RelationManagers;
+use Joinbiz\Data\Models\Accounting\Invoice;
 
 class InvoiceResource extends Resource
 {
     use HasCustomLabel;
+
     protected static ?string $navigationGroup = 'ACCOUNTING';
 
     protected static ?string $model = Invoice::class;
-
 
     public static function form(Form $form): Form
     {
@@ -128,7 +126,7 @@ class InvoiceResource extends Resource
     public static function getRelations(): array
     {
         return [
-           RelationManagers\InvoiceItemsRelationManager::class,
+            RelationManagers\InvoiceItemsRelationManager::class,
         ];
     }
 

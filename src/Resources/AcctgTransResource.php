@@ -2,23 +2,22 @@
 
 namespace Joinbiz\BizApp\Resources;
 
-use Joinbiz\BizApp\Concerns\HasCustomLabel;
-use Joinbiz\BizApp\Resources\AcctgTransResource\Pages;
-use Joinbiz\BizApp\Resources\AcctgTransResource\RelationManagers;
-use Joinbiz\Data\Models\Accounting\AcctgTrans;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Joinbiz\BizApp\Concerns\HasCustomLabel;
+use Joinbiz\BizApp\Resources\AcctgTransResource\Pages;
+use Joinbiz\BizApp\Resources\AcctgTransResource\RelationManagers;
+use Joinbiz\Data\Models\Accounting\AcctgTrans;
 
 class AcctgTransResource extends Resource
 {
     protected static ?string $model = AcctgTrans::class;
 
     use HasCustomLabel;
+
     protected static ?string $navigationGroup = 'ACCOUNTING';
 
     public static function form(Form $form): Form
@@ -175,7 +174,7 @@ class AcctgTransResource extends Resource
     public static function getRelations(): array
     {
         return [
-           RelationManagers\AcctgTransEntriesRelationManager::class
+            RelationManagers\AcctgTransEntriesRelationManager::class,
         ];
     }
 

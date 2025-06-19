@@ -2,9 +2,8 @@
 
 namespace Joinbiz\BizApp\Resources\InvoiceResource\Pages;
 
-use Joinbiz\BizApp\Resources\InvoiceResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Joinbiz\BizApp\Resources\InvoiceResource;
 
 class CreateInvoice extends CreateRecord
 {

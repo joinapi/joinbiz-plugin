@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\PartyGroupResource\Pages;
 
-use Joinbiz\BizApp\Resources\PartyGroupResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Joinbiz\BizApp\Resources\PartyGroupResource;
 
 class EditPartyGroup extends EditRecord
 {

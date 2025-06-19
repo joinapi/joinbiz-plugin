@@ -8,9 +8,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Columns\Summarizers\Sum;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class InvoiceItemsRelationManager extends RelationManager
 {
@@ -25,10 +23,12 @@ class InvoiceItemsRelationManager extends RelationManager
                     ->maxLength(255),
             ]);
     }
+
     public function getTableRecordKey(Model $record): string
     {
         return $record->invoice_item_seq_id;
     }
+
     public function table(Table $table): Table
     {
         return $table

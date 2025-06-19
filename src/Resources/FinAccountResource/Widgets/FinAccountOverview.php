@@ -2,17 +2,14 @@
 
 namespace Joinbiz\BizApp\Resources\FinAccountResource\Widgets;
 
-use Joinbiz\BizApp\Resources\FinAccountResource\Pages\ListFinAccounts;
 use App\Infolists\Components\StateWidgetCustom;
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\Split;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Widgets\ChartWidget;
-use Carbon\Carbon;
 
 class FinAccountOverview extends ChartWidget
-
 {
     protected static ?string $heading = 'Movimentação Mensal';
 
@@ -31,14 +28,14 @@ class FinAccountOverview extends ChartWidget
                     'label' => 'Receitas',
                     'data' => $data['receitas'],
                     'borderColor' => '#10B981',
-                    'fill' => false
+                    'fill' => false,
                 ],
                 [
                     'label' => 'Despesas',
                     'data' => $data['despesas'],
                     'borderColor' => '#EF4444',
-                    'fill' => false
-                ]
+                    'fill' => false,
+                ],
             ],
             'labels' => $data['labels'],
         ];
@@ -48,6 +45,7 @@ class FinAccountOverview extends ChartWidget
     {
         return 'line';
     }
+
     public function infolist($infolist): Infolist
     {
         return $infolist->schema([
@@ -80,10 +78,11 @@ class FinAccountOverview extends ChartWidget
                         ->default(12890)
                         ->money(),
                 ]),
-            ])->from('md')
+            ])->from('md'),
 
         ])->state($this->finResume);
     }
+
     protected function getOptions(): array
     {
         return [
@@ -93,7 +92,7 @@ class FinAccountOverview extends ChartWidget
                     'ticks' => [
                         'callback' => "function(value) {
                             return 'R$ ' + new Intl.NumberFormat('pt-BR').format(value);
-                        }"
+                        }",
                     ],
                 ],
             ],
@@ -105,10 +104,9 @@ class FinAccountOverview extends ChartWidget
         // Implemente aqui a lógica para buscar os dados reais do seu banco de dados
         // Este é apenas um exemplo
         return [
-            'receitas' => [10,10],
-            'despesas' => [23,23],
+            'receitas' => [10, 10],
+            'despesas' => [23, 23],
             'labels' => ['JAN', 'FEV'],
         ];
     }
-
 }

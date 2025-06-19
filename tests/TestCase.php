@@ -2,11 +2,8 @@
 
 namespace Joinbiz\BizApp\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Livewire\LivewireServiceProvider;
-use Orchestra\Testbench\TestCase as Orchestra;
-use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 use Joinbiz\BizApp\BizAppServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

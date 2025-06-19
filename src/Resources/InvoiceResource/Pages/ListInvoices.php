@@ -2,9 +2,9 @@
 
 namespace Joinbiz\BizApp\Resources\InvoiceResource\Pages;
 
-use Joinbiz\BizApp\Resources\InvoiceResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Joinbiz\BizApp\Resources\InvoiceResource;
 
 class ListInvoices extends ListRecords
 {

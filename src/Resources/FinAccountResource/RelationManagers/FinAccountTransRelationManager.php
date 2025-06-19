@@ -8,7 +8,6 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class FinAccountTransRelationManager extends RelationManager
 {
@@ -23,12 +22,11 @@ class FinAccountTransRelationManager extends RelationManager
                     ->relationship('finAccountTransType', 'fin_account_trans_type_id')
                     ->required(),
                 Forms\Components\Select::make('status_id')
-                    ->relationship('statusItem', 'status_id' , modifyQueryUsing: fn (Builder $query) => $query->where('status_type_id', 'FINACT_TRNS_STATUS'))
+                    ->relationship('statusItem', 'status_id', modifyQueryUsing: fn (Builder $query) => $query->where('status_type_id', 'FINACT_TRNS_STATUS'))
                     ->required(),
                 Forms\Components\TextInput::make('amount')
                     ->required()
                     ->numeric(),
-
 
             ]);
     }
